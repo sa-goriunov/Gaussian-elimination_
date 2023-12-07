@@ -3,14 +3,14 @@
 #include "stdlib.h"
 
 double *enterAns(struct matrix *matr) {
-	double *array = malloc((matr->columns-1) * sizeof(double));
+	int j = (matr->columns) - 1;
+	double *array = malloc(j * sizeof(double));
 	return array;
 }
 
 void printAns(double* answer, int n) {
 	for (int i = 0; i < n; i++)
-		//printf("%.2lf ",answer[i]);
-	printf("X%d = %.2lf; ", i+1, answer[i]);
+		printf("X%d = %.2lf; ", i+1, answer[i]);
 }
 
 void Answer(struct matrix *matr){  //решение системы по матрице треугольного вида (определённая система)

@@ -1,16 +1,17 @@
 #include "Gauss.h"
+#include "math.h"
 
 void swap(struct matrix *matr, int a, int b){
 	for (int i = 0; i < matr->columns; i++) {
-		matr->array[a * matr->columns + i] = matr->array[a * matr->columns + i] + matr->array[b * matr->columns + i];
-		matr->array[b * matr->columns + i] = matr->array[a * matr->columns + i] - matr->array[b * matr->columns + i];
-		matr->array[a * matr->columns + i] = matr->array[a * matr->columns + i] - matr->array[b * matr->columns + i];
+		double tmp = matr->array[a * matr->columns + i];
+		matr->array[a * matr->columns + i] = matr->array[b * matr->columns + i];
+		matr->array[b * matr->columns + i] = tmp;
 	}
 }
 
 void check(struct matrix *matr, int i) {
-	if (matr->array[i * matr->columns + i] == 0) {
-		int y = i; while ((matr->array[(y+1) * matr->columns + i] == 0) && (y < matr->strings)) {
+	if (fabs(matr->array[i * matr->columns + i])<0.001 ) {
+		int y = i; while ((fabs(matr->array[i * matr->columns + i]) < 0.001) && (y < matr->strings)) {
 			y++;
 		}
 		if (matr->array[y * matr->columns + i]==0) { matr->condition = 9;}

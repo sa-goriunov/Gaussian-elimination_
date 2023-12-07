@@ -13,11 +13,11 @@ void error() { printf("Fatal system error"); }
 
 main() {
 	enter(&a);
-	trianglize(&a);
+	if (a.condition == 0) { trianglize(&a); };
 	switch (a.condition) {
 	case 0: Answer(&a); break;
 	case 8: printf("Infinity number of answers. :("); break;
-	case 9: printf("Can't find answers. :("); break;
+	case 9: printf("Can't find any answers. :("); break;
 	case 5: break;
 	default: error();
 	}
