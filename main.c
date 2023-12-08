@@ -12,6 +12,7 @@ void printTEST(struct matrix matr){  //вывод матрицы для тестов
 void error() { printf("Fatal system error"); }
 
 main() {
+	struct matrix a;
 	enter(&a);
 	if (a.condition == 0) { trianglize(&a); };
 	switch (a.condition) {

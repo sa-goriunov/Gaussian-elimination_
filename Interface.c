@@ -29,7 +29,7 @@ void enter(struct matrix *matr) {
 		matr->strings = equations;
 		matr->array = malloc(matr->columns * matr->strings * sizeof(double));
 		if (matr->array == NULL) { error(); matr->condition = 5; }
-		else { enter1(matr); }
+		else { enter1(matr); matr->condition = 0; }
 		}
 	}
 }

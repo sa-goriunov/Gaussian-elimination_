@@ -5,7 +5,7 @@ struct matrix {
 	int condition; //решаема ли система
 };
 
-struct matrix a;
+//struct matrix a;
 
 void trianglize(struct matrix *matr);
 

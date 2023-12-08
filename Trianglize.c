@@ -9,9 +9,14 @@ void swap(struct matrix *matr, int a, int b){
 	}
 }
 
+void check1(struct matrix *matr, int i) {
+	
+}
+
 void check(struct matrix *matr, int i) {
 	if (fabs(matr->array[i * matr->columns + i])<0.001 ) {
-		int y = i; while ((fabs(matr->array[i * matr->columns + i]) < 0.001) && (y < matr->strings)) {
+		int y = i; 
+		while ((fabs(matr->array[y * matr->columns + i]) < 0.001) && (y < matr->strings-1)) {
 			y++;
 		}
 		if (matr->array[y * matr->columns + i]==0) { matr->condition = 9;}
